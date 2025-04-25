@@ -20,7 +20,7 @@ const AboutSection = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="relative w-full h-[60vh] border-b-[12px] -mt-[16px] border-blue-600 rounded-b-[80px] overflow-hidden"
+        className="relative w-full h-[60vh] border-b-[12px] -mt-[16px] border-green-600 rounded-b-[80px] overflow-hidden"
       >
         <img
           src={picture3}
@@ -58,7 +58,7 @@ const AboutSection = () => {
           {/* Text Section */}
           <div className="md:w-1/2">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
-              About <span className="text-green-600">Us</span>
+              About <span className="text-blue-600">Us</span>
             </h2>
             <p className="text-gray-700 mb-4 leading-relaxed">
               At <span className="font-semibold">EcoClean Junk Removal</span>,
@@ -67,22 +67,23 @@ const AboutSection = () => {
               environmental responsibility.
             </p>
             <p className="text-gray-700 mb-4 leading-relaxed">
-              As a locally owned and operated business, we take pride in serving
-              our community—helping homeowners, businesses, and property
-              managers clear out unwanted items and maintain clean spaces.
+              As a locally owned, veterans operated business, we take pride in
+              serving our community, helping homeowners, businesses, and
+              property managers clear out unwanted items and maintain clean
+              spaces.
             </p>
-            <p className="text-gray-700 mb-4 leading-relaxed">
+            {/* <p className="text-gray-700 mb-4 leading-relaxed">
               Our mission is to make junk removal hassle-free while promoting
               sustainable disposal practices. We strive to recycle, repurpose,
               or donate items whenever possible—reducing landfill waste and
               supporting a greener planet.
-            </p>
+            </p> */}
             <p className="text-gray-700 leading-relaxed mb-6">
               Customer satisfaction is our top priority. We deliver prompt
               service, fair pricing, and a commitment to excellence. Let us
               handle the mess, so you can enjoy a cleaner, clutter-free space!
             </p>
-            <button className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-semibold transition duration-300">
+            <button className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-full font-semibold transition duration-300">
               Contact Us
             </button>
           </div>

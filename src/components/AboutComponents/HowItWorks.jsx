@@ -49,14 +49,14 @@ const HowItWorks = () => {
                 delay: index * 0.2,
                 ease: "easeOut",
               }}
-              className="flex flex-col items-center text-center space-y-4 bg-green-400 p-10 rounded-bl-3xl rounded-tr-3xl"
+              className="flex flex-col items-center text-center space-y-4 bg-white p-10 rounded-bl-3xl rounded-tr-3xl shadow-2xl border border-sky-400"
             >
               <img
                 src={step.image}
                 alt={step.title}
-                className="w-28 h-28 object-contain drop-shadow-lg"
+                className="w-28 h-28 object-contain "
               />
-              <p className="text-sm md:text-base text-white/90 leading-relaxed">
+              <p className="text-sm md:text-base text-black leading-relaxed">
                 {step.description}
               </p>
             </motion.div>

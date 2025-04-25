@@ -8,7 +8,7 @@ const About = () => {
     <div>
       <AboutSection />
       <HowItWorks />
-      <WhyChooseUs />
+      {/* <WhyChooseUs /> */}
     </div>
   );
 };
