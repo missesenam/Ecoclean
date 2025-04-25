@@ -8,14 +8,7 @@ const NavBar = () => {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
 
-  const navItems = [
-    "Home",
-    "About Us",
-    "Services",
-    "Why Choose Us",
-    "Contact",
-    "Gallery",
-  ];
+  const navItems = ["Home", "About Us", "Services", "Contact", "Gallery"];
 
   const getPath = (item) =>
     item === "Home" ? "/" : `/${item.toLowerCase().replace(/\s+/g, "-")}`;

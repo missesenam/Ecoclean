@@ -3,6 +3,16 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Custom utility for text stroke */
+.text-stroke-white {
+  -webkit-text-stroke: 1px white;
+}
+.text-stroke-black {
+  -webkit-text-stroke: 2px black;
+}
+.text-stroke-green {
+  -webkit-text-stroke: 2px #16a34a; 
+}
 @theme {
   --color-bbg:'#e5e5e5'
     /* // Light Blue shades */
@@ -157,3 +167,17 @@
   }
 }
 
+@keyframes fall {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-fall {
+  animation: fall 0.6s ease-out;
+}

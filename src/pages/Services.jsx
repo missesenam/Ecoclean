@@ -1,7 +1,14 @@
 import React from "react";
+import ServicesSection from "@/components/ServicesComponent/ServicesSection";
+import ServiceArea from "@/components/ServicesComponent/ServiceArea";
 
 const Services = () => {
-  return <div>ser</div>;
+  return (
+    <>
+      <ServicesSection />
+      <ServiceArea />
+    </>
+  );
 };
 
 export default Services;

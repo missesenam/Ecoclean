@@ -3,6 +3,7 @@ import HeroSection from "@/components/HomeComponents/HeroSection";
 import CompanyHighlight from "@/components/HomeComponents/CompanyHighlight";
 import picture11 from "../assets/picture11.jpg";
 import ServicesSection from "@/components/HomeComponents/ServicesSection";
+import WhyChooseUs from "../components/WhyChooseUs";
 
 const Home = () => {
   return (
@@ -27,6 +28,7 @@ const Home = () => {
           </button>
         </div>
       </div>
+      <WhyChooseUs />
     </div>
   );
 };
