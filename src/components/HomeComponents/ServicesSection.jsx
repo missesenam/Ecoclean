@@ -4,6 +4,7 @@ import picture2 from "../../assets/picture2.jpg";
 import picture3 from "../../assets/picture3.jpg";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const ServicesSection = () => {
   const ref = useRef(null);
@@ -53,7 +54,7 @@ const ServicesSection = () => {
             Services
           </h1>
           <motion.div
-            className="absolute bottom-0 left-0 h-[3px] bg-black"
+            className="absolute bottom-0 left-0 h-[3px] bg-green-600"
             initial={{ width: 0 }}
             animate={isInView ? { width: "100%" } : { width: 0 }}
             transition={{ duration: 1.2, ease: "easeInOut" }}

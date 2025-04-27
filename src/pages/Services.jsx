@@ -6,7 +6,7 @@ const Services = () => {
   return (
     <>
       <ServicesSection />
-      <ServiceArea />
+      {/* <ServiceArea /> */}
     </>
   );
 };

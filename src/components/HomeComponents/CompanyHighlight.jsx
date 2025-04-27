@@ -12,10 +12,12 @@ const CompanyIntro = () => {
 
   return (
     <section className="relative mt-16">
-      <div className="text-center mb-7">
-        <h2 className="text-4xl md:text-5xl font-bold text-sky-700 text-center w-[70%] mx-auto">
+      <div class="flex items-center justify-center gap-4 mb-16">
+        <div class="w-16 h-1 bg-sky-700"></div>
+        <h1 class="text-4xl lg:text-6xl font-bold text-sky-700 tracking-wide text-center">
           Cleaning Up the Clutter
-        </h2>
+        </h1>
+        <div class="w-16 h-1 bg-sky-700"></div>
       </div>
 
       <div className="h-[70vh] flex items-end relative mb-16">
@@ -25,7 +27,7 @@ const CompanyIntro = () => {
           className="absolute top-1/2 left-1/2 transform -translate-1/2 flex flex-col md:flex-row gap-8 w-[90%] md:h-[80%] md:w-[80%]"
           ref={ref}
         >
-          <div className="w-2/3 text-3xl md:text-7xl text-center font-bold text-green-700 ">
+          <div className="w-2/3 text-3xl md:text-6xl text-center font-bold text-green-700 ">
             {text.split("").map((char, i) => (
               <span
                 key={i}
@@ -33,7 +35,7 @@ const CompanyIntro = () => {
                   inView ? "animate-fall opacity-0" : "opacity-0"
                 }`}
                 style={{
-                  animationDelay: `${i * 0.1}s`,
+                  animationDelay: `${i * 0.05}s`,
                   animationFillMode: "forwards",
                 }}
               >

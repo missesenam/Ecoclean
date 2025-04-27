@@ -22,18 +22,18 @@ const AboutSection = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="relative w-full h-[60vh] border-b-[12px] -mt-[16px] border-green-600 rounded-b-[80px] overflow-hidden"
+        className="relative w-full h-[60vh] border-b-[12px] -mt-[16px] border-green-300 rounded-b-[80px] overflow-hidden"
       >
         <img
           src={picture3}
           alt="EcoClean Team"
           className="w-full h-full object-cover object-top shadow-lg"
         />
-        <div className="absolute bottom-10 left-10 p-6 rounded-lg  max-w-md">
+        {/* <div className="absolute bottom-10 left-10 p-6 rounded-lg  max-w-md">
           <h2 className="text-6xl font-bold text-green-600 text-stroke-4 text-stroke-black font-serif">
             About Us
           </h2>
-        </div>
+        </div> */}
       </motion.div>
       {/* About Content Section with animation */}
       <motion.section

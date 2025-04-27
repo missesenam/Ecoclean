@@ -15,7 +15,7 @@ const Gallery = () => {
     <>
       <section>
         <div
-          className="relative bg-cover bg-center bg-no-repeat lg:h-[50vh]"
+          className="relative bg-cover bg-center bg-no-repeat lg:h-[50vh] -mt-4"
           style={{ backgroundImage: `url(${picture4})` }}
         >
           {/* Dark Background Overlay */}
@@ -35,11 +35,14 @@ const Gallery = () => {
       <section className="py-12 bg-slate-200">
         <div className="grid grid-cols-3 gap-5  max-w-6xl mx-auto ">
           {images.map((image, index) => (
-            <div key={index} className="relative overflow-hidden group">
+            <div
+              key={index}
+              className="relative overflow-hidden group cursor-pointer"
+            >
               <img
                 src={image.src}
                 alt={`image ${index + 1}`}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 "
               />
               <div className="absolute top-0 left-0 w-full h-full bg-black opacity-20 transition-all duration-300 group-hover:bg-opacity-50"></div>
               <div className="absolute bottom-[-50px] left-5 text-white text-xl font-semibold transition-all duration-300 group-hover:bottom-5">

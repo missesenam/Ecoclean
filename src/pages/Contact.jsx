@@ -4,13 +4,13 @@ import picture7 from "../assets/picture7.jpg";
 import { Link } from "react-router-dom";
 
 const Contact = () => {
-  const images = [picture7, picture7, picture7, picture7, picture7];
+  const images = [picture7, picture7, picture7, picture7, picture7, picture7];
   return (
     <>
       {" "}
       <section>
         <div
-          className=" mx-auto p-8"
+          className=" mx-auto p-8 -mt-4"
           style={{ backgroundImage: `url(${picture6})` }}
         >
           <div className="text-center mb-8 max-w-4xl mx-auto">
@@ -36,16 +36,13 @@ const Contact = () => {
           </div>
         </div>
       </section>
-      <section className="bg- my-16 py-10">
-        <div className="flex flex-col justify-center items-center min-h-screen shadow-xl max-w-5xl mx-auto bg-green-200 ">
-          {/* Gallery Title */}
+      {/* <section className="bg- my-16 py-10">
+        <div className="flex flex-col justify-center items-center min-h-screen shadow-xl max-w-5xl mx-auto bg-slate-200 ">
           <h2 className="text-3xl lg:text-4xl font-bold text-center text-gray-800 mb-8 capitalize">
             Check out our Gallery
           </h2>
 
-          {/* Image Gallery */}
           <div className="relative w-[80%] max-w-4xl h-[400px] flex justify-center items-center">
-            {/* Loop through images and display each */}
             {images.map((image, index) => (
               <div
                 key={index}
@@ -55,9 +52,11 @@ const Contact = () => {
                     : index === 1
                     ? "w-32 h-32 sm:w-36 sm:h-36 top-5 right-10 sm:right-16"
                     : index === 2
-                    ? "w-40 h-40 sm:w-44 sm:h-44 top-32 left-20"
+                    ? "w-40 h-40 sm:w-44 sm:h-44 top-42 left-20"
                     : index === 3
-                    ? "w-48 h-48 sm:w-52 sm:h-52 top-16"
+                    ? "w-48 h-48 sm:w-52 sm:h-52 bottom-10"
+                    : index === 4
+                    ? "w-48 h-48 sm:w-52 sm:h-52 top-2"
                     : "w-36 h-36 sm:w-40 sm:h-40 bottom-10 right-16"
                 } rounded-full overflow-hidden`}
               >
@@ -70,29 +69,14 @@ const Contact = () => {
             ))}
           </div>
 
-          {/* Button */}
           <Link
             to="/gallery"
-            className="inline-flex items-center px-8 py-4 bg-secondary2 text-primary text-lg font-semibold rounded-full hover:bg-secondary hover:text-secondary2 transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer"
+            className="inline-flex items-center px-8 py-4 bg-blue-900 text-white text-lg font-semibold rounded-full hover:bg-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer"
           >
             Gallery
-            {/* <svg
-              className="w-5 h-5 ml-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              ></path>
-            </svg> */}
           </Link>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };

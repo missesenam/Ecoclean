@@ -3,7 +3,8 @@ import HeroSection from "@/components/HomeComponents/HeroSection";
 import CompanyHighlight from "@/components/HomeComponents/CompanyHighlight";
 import picture11 from "../assets/picture11.jpg";
 import ServicesSection from "@/components/HomeComponents/ServicesSection";
-import WhyChooseUs from "../components/WhyChooseUs";
+import WhyChooseUs from "../components/HomeComponents/WhyChooseUs";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -23,9 +24,12 @@ const Home = () => {
 
         {/* Contact Button */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <button className="px-6 py-3 bg-green-400 opacity-80 text-white font-semibold rounded-lg shadow-md hover:bg-green-600 transition duration-300">
+          <Link
+            to="/contact"
+            className="px-6 py-3 bg-green-400 opacity-80 text-white font-semibold rounded-lg shadow-md hover:bg-green-600 transition duration-300"
+          >
             Contact Us
-          </button>
+          </Link>
         </div>
       </div>
       <WhyChooseUs />
