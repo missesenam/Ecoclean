@@ -31,7 +31,7 @@ const NavBar = () => {
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
           <div className="flex-shrink-0 text-2xl font-bold text-green-700">
-            <img src={logo} alt="" />
+            <img src={logo} alt="" className="h-[60px]" />
           </div>
 
           {/* Desktop Menu */}

@@ -77,7 +77,8 @@ const ServicesSection = () => {
             }}
             className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-full shadow-lg font-semibold hover:bg-blue-700 transition"
           >
-            Check out more services
+            <Link to="/services">Check out more services</Link>
+
             <ArrowRight className="w-5 h-5" />
           </motion.button>
         </div>

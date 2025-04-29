@@ -4,31 +4,27 @@ import picture5 from "../../assets/picture5.jpg";
 const ServicesSection = () => {
   const services = [
     {
-      category: "Furniture Removal",
-      servicesName: [
-        "Furniture Removal",
-        "Television Disposal & Recycling",
-        "Yard Waste Removal",
-        "Foreclosure Clean Outs",
-      ],
-    },
-    {
       category: "Disposal Services",
       servicesName: [
-        "Tire Disposal",
-        "Appliance Removal",
+        "Foreclosure Cleanout",
+        "Hoarding cleanout",
+        "Garage Cleanout",
+        "Yard waste removal",
         "Hot Tub Disposal",
-        "E-Waste Disposal",
-        "Trash Removal",
+        "Garbage Remova",
+        "Others",
       ],
     },
     {
       category: "Recycling Services",
       servicesName: [
         "Mattress Disposal",
-        "Refrigerator Disposal & Recycling",
+        "Furniture Removal",
+        "E-waste Disposal",
         "Construction Waste Removal",
-        "Garbage Removal",
+        "Appliance Removal",
+        "Tire Disposal",
+        "Others",
       ],
     },
   ];
@@ -66,7 +62,7 @@ const ServicesSection = () => {
           </h1>
         </div>
 
-        <article className="grid md:grid-cols-2 xl:grid-cols-3 gap-10 max-w-5xl mx-auto absolute top-[35%] left-0 right-0 z-10">
+        <article className="grid md:grid-cols-2 xl:grid-cols-2 gap-10 max-w-5xl mx-auto absolute top-[35%] left-0 right-0 z-10">
           {services.map((serviceCategory, index) => (
             <div key={index} className="bg-white p-4 rounded-lg">
               <h3 className="text-2xl font-semibold text-primary20 mb-2 bg-green-600 p-2 text-white">
@@ -75,8 +71,7 @@ const ServicesSection = () => {
               <ul className="list-disc pl-5 space-y-2">
                 {serviceCategory.servicesName.map((service, idx) => (
                   <li key={idx}>
-                    <strong>{service}:</strong> Service details will be provided
-                    here.
+                    <strong>{service}</strong>
                   </li>
                 ))}
               </ul>

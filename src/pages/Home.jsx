@@ -10,7 +10,9 @@ const Home = () => {
   return (
     <div className="">
       <HeroSection />
-      <CompanyHighlight />
+      <WhyChooseUs />
+
+      {/* <CompanyHighlight /> */}
       <ServicesSection />
       <div className="relative md:w-[80%] mx-auto h-[60vh]">
         <img
@@ -32,7 +34,6 @@ const Home = () => {
           </Link>
         </div>
       </div>
-      <WhyChooseUs />
     </div>
   );
 };

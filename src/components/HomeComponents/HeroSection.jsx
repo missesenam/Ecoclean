@@ -24,14 +24,9 @@ const HeroSection = () => {
       href: "tel:8159085729",
       className: "bg-green-600 hover:bg-green-700 text-white",
     },
+
     {
-      label: "(630) 618-2165",
-      href: "tel:6306182165",
-      className:
-        "bg-green-600 hover:bg-green-700 text-white md:absolute md:bg-black md:opacity-50 md:top-10 md:right-20",
-    },
-    {
-      label: "Book Online",
+      label: "Book Now",
       // to: "/booking",
       className: "bg-white hover:bg-gray-100 text-green-700",
     },
@@ -63,7 +58,7 @@ const HeroSection = () => {
 
         <div className="flex flex-col md:flex-row gap-4 mb-6">
           {buttons.map((btn, index) =>
-            btn.label === "Book Online" ? (
+            btn.label === "Book Now" ? (
               <Link
                 key={index}
                 to="/booking"

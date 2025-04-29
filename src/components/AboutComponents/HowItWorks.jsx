@@ -7,16 +7,19 @@ import commited from "../../assets/commited.png";
 const steps = [
   {
     image: freequote,
+    title: "We Quote",
     description:
-      "Every junk removal job is unique. To ensure you get the right service, EcoClean and Haul LLC provides free, no-obligation quotes tailored to your specific needs. Just give us a call, and we’ll take care of the rest.",
+      "Schedule your appointment online or by calling 1-888-797-4520.",
   },
   {
     image: flexibility,
+    title: "We Schedule",
     description:
       "We offer flexible scheduling to fit your busy lifestyle. Choose a time that works best for you, and our professional haulers will arrive on time, ready to get the job done.",
   },
   {
     image: commited,
+    title: "We Remove",
     description:
       "We’re committed to eco-friendly junk removal. Whenever possible, we recycle and donate items to minimize waste. You can trust us to handle your unwanted items responsibly.",
   },
@@ -37,6 +40,12 @@ const HowItWorks = () => {
         <h2 className="text-3xl md:text-4xl font-extrabold mb-12 tracking-wider text-black">
           HOW IT WORKS
         </h2>
+        <p className="text-sm mb-12 md:text-base text-black leading-relaxed">
+          Hassle-Free Junk Removal in will county and surrounding areas We know
+          that convenience matters. That’s why we’ve made junk removal in Joliet
+          as simple and stress-free as possible. Here’s how our streamlined
+          process works:
+        </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {steps.map((step, index) => (
@@ -56,6 +65,7 @@ const HowItWorks = () => {
                 alt={step.title}
                 className="w-28 h-28 object-contain "
               />
+              <h2 className="text-center text-black font-bold">{step.title}</h2>
               <p className="text-sm md:text-base text-black leading-relaxed">
                 {step.description}
               </p>

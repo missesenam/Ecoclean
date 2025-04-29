@@ -18,7 +18,7 @@ const Footer = () => {
           className="text-xl font-bold bg-gradient-to-r from-blue-500 to-green-500 
       bg-clip-text text-transparent"
         >
-          Ecoclean
+          Ecoclean Junk Removal
         </div>
         <div className="flex space-x-4 text-gray-500 dark:text-gray-400">
           <a href="#" className="hover:text-pink-600 transition-colors">
