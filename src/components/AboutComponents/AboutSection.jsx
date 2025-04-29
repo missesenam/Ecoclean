@@ -16,73 +16,6 @@ const AboutSection = () => {
   });
   return (
     <>
-      {/* Hero Section with animation */}
-      {/* <motion.div
-        ref={heroRef}
-        initial={{ opacity: 0, y: 50 }}
-        animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="relative w-full h-[60vh] border-b-[12px] -mt-[16px] border-green-300 rounded-b-[80px] overflow-hidden"
-      >
-        <img
-          src={picture3}
-          alt="EcoClean Team"
-          className="w-full h-full object-cover object-top shadow-lg"
-        />
-       
-      </motion.div> */}
-      {/* About Content Section with animation */}
-      {/* <motion.section
-        ref={contentRef}
-        initial={{ opacity: 0, y: 60 }}
-        animate={isContentInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
-        className="bg-gray-100 py-12 px-4 md:px-16"
-        id="about"
-      >
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10 ">
-          <div className="md:w-1/2">
-            <img
-              src={picture7}
-              alt="EcoClean Junk Removal Team"
-              className="rounded-2xl shadow-lg w-full h-auto object-cover"
-            />
-          </div>
-
-          <div className="md:w-1/2">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
-              About <span className="text-blue-500">Us</span>
-            </h2>
-            <p className="text-gray-700 mb-4 leading-relaxed">
-              At <span className="font-semibold">EcoClean Junk Removal</span>,
-              we are committed to providing top-notch junk removal, cleaning,
-              and hauling services with a focus on efficiency, reliability, and
-              environmental responsibility.
-            </p>
-            <p className="text-gray-700 mb-4 leading-relaxed">
-              As a locally owned, veterans operated business, we take pride in
-              serving our community, helping homeowners, businesses, and
-              property managers clear out unwanted items and maintain clean
-              spaces.
-            </p>
-
-            <p className="text-gray-700 leading-relaxed mb-6">
-              Customer satisfaction is our top priority. We deliver prompt
-              service, fair pricing, and a commitment to excellence. Let us
-              handle the mess, so you can enjoy a cleaner, clutter-free space!
-            </p>
-
-            <button className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-full font-semibold transition duration-300">
-              Contact Us
-            </button>
-          </div>
-        </div>
-        <p className="bg-slate-600 py-4 text-center mt-2 text-white">
-          Contact us today to schedule your service and experience the EcoClean
-          Junk Removal difference!
-        </p>
-      </motion.section> */}
-      {/* value & mission */}
       <motion.div>
         <div
           className="relative w-full lg:h-[80vh] bg-cover bg-center"
@@ -93,11 +26,10 @@ const AboutSection = () => {
           {/* Dark overlay */}
           <div className="absolute inset-0 bg-black opacity-50"></div>
 
-          {/* Content on top of the dark overlay */}
-          <div className="relative z-10 text-white">
-            {/* mission Section */}
-            <div className="bg-sky-800 lg:max-w-5xl mx-auto rounded-xl text-center p-5">
-              <h2 className="text-2xl font-semibold ">Our Mission</h2>
+          {/* Centered blue box */}
+          <div className="relative z-10 flex items-center justify-center h-full text-white px-4 py-5">
+            <div className="bg-sky-800 lg:max-w-5xl w-full rounded-xl text-center p-5">
+              <h2 className="text-2xl font-semibold">Our Mission</h2>
               <p className="mt-4 text-lg">
                 At EcoClean Junk Removal, we are committed to providing
                 top-notch junk removal, cleaning, and hauling services with a
@@ -105,19 +37,26 @@ const AboutSection = () => {
                 responsibility. As a locally owned and operated business, we
                 take pride in serving our community by helping homeowners,
                 businesses, and property managers clear out unwanted items,
-                maintain clean spaces, and handle heavy-duty hauling needs. Our
-                mission is to make junk removal and cleaning hassle-free while
-                promoting sustainable disposal practices. We strive to recycle,
-                repurpose, or donate items whenever possible, reducing landfill
-                waste and supporting a greener environment. Whether you're
-                decluttering your home, managing a property cleanout, or need
-                heavy materials hauled away, our professional team is ready to
-                handle the job with care and professionalism. At EcoClean Junk
-                Removal, customer satisfaction is our priority. We provide
-                prompt service, fair pricing, and a commitment to excellence in
-                everything we do. Let us take care of the mess so you can enjoy
-                a cleaner, clutter-free space! Contact us today to schedule your
-                service and experience the EcoClean Junk Removal difference!
+                maintain clean spaces, and handle heavy-duty hauling needs.
+                <br />
+                <br />
+                Our mission is to make junk removal and cleaning hassle-free
+                while promoting sustainable disposal practices. We strive to
+                recycle, repurpose, or donate items whenever possible, reducing
+                landfill waste and supporting a greener environment.
+                <br />
+                <br />
+                Whether you're decluttering your home, managing a property
+                cleanout, or need heavy materials hauled away, our professional
+                team is ready to handle the job with care and professionalism.
+                At EcoClean Junk Removal, customer satisfaction is our priority.
+                We provide prompt service, fair pricing, and a commitment to
+                excellence in everything we do.
+                <br />
+                <br />
+                Let us take care of the mess so you can enjoy a cleaner,
+                clutter-free space! Contact us today to schedule your service
+                and experience the EcoClean Junk Removal difference!
               </p>
             </div>
           </div>

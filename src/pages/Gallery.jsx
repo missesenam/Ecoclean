@@ -22,7 +22,7 @@ const Gallery = () => {
           <div className="absolute inset-0 bg-black/50 opacity-50"></div>{" "}
           {/* Centered Text */}
           <div className="relative z-10 flex flex-col text-white text-center items-center justify-center p-8">
-            <h2 className="text-3xl lg:text-6xl text-sky-500 font-bold mb-4">
+            <h2 className="text-3xl lg:text-6xl text-white font-bold mb-4">
               Gallery
             </h2>
             <p className="text-lg lg:text-xl lg:w-[60%]">
@@ -33,7 +33,7 @@ const Gallery = () => {
         </div>
       </section>
       <section className="py-12 bg-slate-200">
-        <div className="grid grid-cols-3 gap-5  max-w-6xl mx-auto ">
+        <div className="px-4 grid md:grid-cols-3 gap-5  max-w-6xl mx-auto ">
           {images.map((image, index) => (
             <div
               key={index}

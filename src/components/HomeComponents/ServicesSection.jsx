@@ -16,10 +16,10 @@ const ServicesSection = () => {
       initial={{ opacity: 0, y: 100 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="w-[90%] mx-auto md:h-[60vh] flex gap-6 my-20"
+      className="w-[90%] mx-auto md:h-[60vh] md:flex gap-6 my:10 md:my-20"
     >
       <div className="w-1/2 flex items-center justify-center mb-16">
-        <div className="relative w-[80%] h-[90%]">
+        <div className="hidden md:block md:relative md:w-[80%] md:h-[90%]">
           {[
             {
               src: picture1,
@@ -48,7 +48,7 @@ const ServicesSection = () => {
         </div>
       </div>
 
-      <div className="w-full md:w-1/2 p-6 rounded-xl text-white space-y-4">
+      <div className="w-full md:w-1/2 md:p-6 rounded-xl text-white space-y-4">
         <div className="relative w-fit">
           <h1 className="text-6xl font-bold text-blue-400 mb-2 pb-3">
             Services

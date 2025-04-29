@@ -36,7 +36,7 @@ function ServiceArea() {
           <span class="absolute -bottom-6 left-1/2 w-1/3 h-1 bg-gradient-to-r from-green-300 to-sky-500 transform -translate-x-1/2 translate-y-2"></span>
         </h1>
 
-        <div className="grid md:grid-cols-2 gap-2 mx-auto max-w-lg ">
+        <div className="grid md:grid-cols-2 gap-2 mx-auto max-w-lg justify-center">
           {locations.map((location, index) => (
             <div key={index} className="flex items-center gap-2 ">
               <span className="text-green-500" style={{ color: "green" }}>

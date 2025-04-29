@@ -37,7 +37,7 @@ const ServicesSection = () => {
               our services
             </h1>
 
-            <p className="text-lg">
+            <p className="mb-4 text-lg">
               Residential, Commercial Junk Removal and Haulage We can handle
               most ANYTHING and EVERYTHING, except hazardous waste.
             </p>
@@ -53,7 +53,7 @@ const ServicesSection = () => {
       </section>
       {/* services section */}
       <section className="px-[50px] md:px-[100px] bg-slate-200 relative py-10 min-h-screen">
-        <div className="bg-sky-700 h-[30vh] lg:h-[40vh] flex justify-center items-center">
+        <div className="bg-sky-700 h-[20vh] lg:h-[40vh] flex justify-center items-center">
           <h1 className="text-white text-4xl md:text-6xl font-bold">
             <span className="text-transparent text-stroke text-stroke-green uppercase pr-4">
               our
@@ -62,7 +62,7 @@ const ServicesSection = () => {
           </h1>
         </div>
 
-        <article className="grid md:grid-cols-2 xl:grid-cols-2 gap-10 max-w-5xl mx-auto absolute top-[35%] left-0 right-0 z-10">
+        <article className="grid md:grid-cols-2 xl:grid-cols-2 gap-10 max-w-5xl mx-auto md:absolute md:top-[35%] md:left-0 md:right-0 z-10">
           {services.map((serviceCategory, index) => (
             <div key={index} className="bg-white p-4 rounded-lg">
               <h3 className="text-2xl font-semibold text-primary20 mb-2 bg-green-600 p-2 text-white">
