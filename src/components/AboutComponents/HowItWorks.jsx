@@ -8,8 +8,15 @@ const steps = [
   {
     image: freequote,
     title: "We Quote",
-    description:
-      "Schedule your appointment online or by calling 1-888-797-4520.",
+    description: (
+      <>
+        Schedule your appointment online or by calling{" "}
+        <a href="tel:1-888-797-4520" className="text-blue-600 underline">
+          1-888-797-4520
+        </a>
+        .
+      </>
+    ),
   },
   {
     image: flexibility,
