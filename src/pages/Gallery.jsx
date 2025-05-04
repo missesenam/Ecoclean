@@ -1,22 +1,85 @@
 import React from "react";
+import picture1 from "../assets/picture1.jpg";
+import picture2 from "../assets/picture2.jpg";
+import picture3 from "../assets/picture3.jpg";
 import picture4 from "../assets/picture4.jpg";
+import picture5 from "../assets/picture5.jpg";
+import picture6 from "../assets/picture6.jpg";
+import picture7 from "../assets/picture7.jpg";
+import picture8 from "../assets/picture8.jpg";
+import picture9 from "../assets/picture9.jpg";
+import picture10 from "../assets/picture10.jpg";
+import picture11 from "../assets/picture11.jpg";
+import picture12 from "../assets/picture12.jpg";
+import picture13 from "../assets/picture13.png";
+import picture14 from "../assets/picture14.jpg";
+import picture15 from "../assets/picture15.jpg";
+import picture16 from "../assets/picture16.jpg";
+import picture17 from "../assets/picture17.jpg";
+import picture18 from "../assets/picture18.jpg";
+import picture19 from "../assets/picture19.jpg";
+import picture20 from "../assets/picture20.jpg";
+import picture21 from "../assets/picture21.jpg";
+import picture22 from "../assets/picture22.jpg";
+import picture23 from "../assets/picture23.jpg";
+import picture24 from "../assets/picture24.jpg";
+import picture25 from "../assets/picture25.jpg";
+import picture26 from "../assets/picture26.jpg";
+import picture27 from "../assets/picture27.jpg";
 
 const Gallery = () => {
-  const images = [
-    { src: picture4, title: "ecoclean", description: "image 1" },
-    { src: picture4, title: "ecoclean", description: "image 1" },
-    { src: picture4, title: "ecoclean", description: "image 1" },
-    { src: picture4, title: "ecoclean", description: "image 1" },
-    { src: picture4, title: "ecoclean", description: "image 1" },
-    { src: picture4, title: "ecoclean", description: "image 1" },
+  // const images = [
+  //   { src: picture4, title: "ecoclean", description: "image 1" },
+  //   { src: picture3, title: "ecoclean", description: "image 1" },
+  //   { src: picture4, title: "ecoclean", description: "image 1" },
+  //   { src: picture4, title: "ecoclean", description: "image 1" },
+  //   { src: picture4, title: "ecoclean", description: "image 1" },
+  //   { src: picture4, title: "ecoclean", description: "image 1" },
+  // ];
+  const pictures = [
+    picture1,
+    picture2,
+    picture3,
+    picture4,
+    picture5,
+    picture6,
+    picture7,
+    picture8,
+    picture9,
+    picture10,
+    picture11,
+    picture12,
+    picture13,
+    picture14,
+    picture15,
+    picture16,
+    picture17,
+    picture18,
+    picture19,
+    picture20,
+    picture21,
+    picture22,
+    picture23,
+    picture24,
+    picture25,
+    picture26,
+    picture27,
   ];
+
+  const images = pictures.map((pic, index) => ({
+    src: pic,
+    // title: "ecoclean",
+    // description: `image ${index + 1}`,
+  }));
 
   return (
     <>
       <section>
         <div
           className="relative bg-cover bg-center bg-no-repeat lg:h-[50vh] -mt-4"
-          style={{ backgroundImage: `url(${picture4})` }}
+          style={{
+            backgroundImage: `url(${picture5})`,
+          }}
         >
           {/* Dark Background Overlay */}
           <div className="absolute inset-0 bg-black/50 opacity-50"></div>{" "}
@@ -26,8 +89,8 @@ const Gallery = () => {
               Gallery
             </h2>
             <p className="text-lg lg:text-xl lg:w-[60%]">
-              Explore our collection showcasing our initiatives, events, and
-              success stories that highlight our community impact.
+              Explore our collection showcasing our works, and success stories
+              that highlight our company impact.
             </p>
           </div>
         </div>

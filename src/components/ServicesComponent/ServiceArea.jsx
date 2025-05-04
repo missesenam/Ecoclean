@@ -1,5 +1,6 @@
 import React from "react";
-import pictur10 from "../../assets/picture10.jpg";
+import picture10 from "../../assets/picture10.jpg";
+import pictureofarea from "../../assets/picture21.jpg";
 
 function ServiceArea() {
   const locations = [
@@ -37,9 +38,14 @@ function ServiceArea() {
 
       <div className="flex flex-col md:flex-row items-center justify-center gap-10 max-w-6xl mx-auto px-4">
         {/* Left - Image */}
-        <div className="w-full md:w-1/2">
+        <div className="w-full flex flex-col gap-4 md:w-1/2">
           <img
-            src={pictur10}
+            src={picture10}
+            alt="Service Area"
+            className="rounded-xl w-full h-auto object-cover shadow-md"
+          />
+          <img
+            src={pictureofarea}
             alt="Service Area"
             className="rounded-xl w-full h-auto object-cover shadow-md"
           />
