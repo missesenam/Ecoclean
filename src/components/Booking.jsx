@@ -4,11 +4,6 @@ import captcha from "../assets/png-transparent-recaptcha-wordmark-hd-logo.png";
 
 const Booking = () => {
   const services = [
-    "Garbage Bin Cleaning",
-    "Residential Trash Pickup",
-    "Commercial Dumpster and Pad Cleaning",
-    "Exterior Pressure Washing",
-    "Exterior Soft Washing",
     "Residential Junk",
     "Commercial Junk",
     "Moving Junk",
