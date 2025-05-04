@@ -13,6 +13,7 @@ import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import Booking from "./components/Booking";
 import ServiceArea from "./components/ServicesComponent/ServiceArea";
+import TermsAndConditions from "./components/TermsAndConditions";
 
 const App = () => {
   const myRoute = createBrowserRouter(
@@ -29,6 +30,7 @@ const App = () => {
 
         <Route>
           <Route path="/booking" element={<Booking />} />
+          <Route path="/termsandconditions" element={<TermsAndConditions />} />
         </Route>
       </Route>
     )

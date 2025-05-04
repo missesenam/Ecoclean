@@ -29,7 +29,7 @@ const AboutSection = () => {
           {/* Centered blue box */}
           <div className="relative z-10 flex items-center justify-center h-full text-white px-4 py-5">
             <div className="bg-sky-800 lg:max-w-5xl w-full rounded-xl text-center p-5">
-              <h2 className="text-2xl font-semibold">Our Mission</h2>
+              <h2 className="text-2xl font-semibold">About</h2>
               <p className="mt-4 text-lg">
                 At EcoClean Junk Removal, we are committed to providing
                 top-notch junk removal, cleaning, and hauling services with a
