@@ -12,7 +12,7 @@ const NavBar = () => {
     "Home",
     "About Us",
     "Services",
-    "ServiceArea",
+    "Service Area",
     "Contact",
     "Gallery",
   ];
