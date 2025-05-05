@@ -1,49 +1,49 @@
 import React, { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
-const faqs = [
-  {
-    question: "What types of items do you remove?",
-    answer:
-      "We remove almost anything—furniture, appliances, yard waste, construction debris, electronics, mattresses, and more. If it’s non-hazardous and fits in our truck, we’ll take it!",
-  },
-  {
-    question: "What happens to the items you pick up?",
-    answer:
-      "What sets EcoClean Junk Removal apart is our commitment to eco-friendly disposal. We prioritize donating items that can be repurposed or reused to support families in need throughout Chicagoland. Anything that can’t be donated is responsibly recycled or creatively repurposed to minimize waste and protect the environment.",
-  },
-  {
-    question: "How is your pricing structured?",
-    answer:
-      "We charge based on how much space your items take up in our truck. Pricing is pro-rated by load size—¼ load, ½ load, ¾ load, and full truckload. Labor, cleanup, and haul-away are included in the price.",
-  },
-  {
-    question: "Do you offer same-day or next-day service?",
-    answer:
-      "Yes! We offer convenient same-day and next-day junk removal to meet your scheduling needs.",
-  },
-  {
-    question: "Do I need to move the items myself?",
-    answer:
-      "Not at all. Our team handles all the heavy lifting, loading, and cleanup so you don’t have to lift a finger.",
-  },
-  {
-    question: "Are there any items you don’t take?",
-    answer:
-      "We do not handle hazardous materials like paint, chemicals, or asbestos. If you're unsure, just give us a call and we’ll let you know.",
-  },
-  {
-    question: "How do I schedule a pickup?",
-    answer:
-      "Scheduling is easy! Call us, text us, or book online. We’ll give you a free estimate and set up a convenient time for your removal.",
-  },
-  {
-    question: "What areas do you service?",
-    answer:
-      "We proudly serve the greater Chicagoland area. Contact us to confirm if we service your specific location.",
-  },
-];
 const Faqs = () => {
+  const faqs = [
+    {
+      question: "What types of items do you remove?",
+      answer:
+        "We remove almost anything—furniture, appliances, yard waste, construction debris, electronics, mattresses, and more. If it’s non-hazardous and fits in our truck, we’ll take it!",
+    },
+    {
+      question: "What happens to the items you pick up?",
+      answer:
+        "What sets EcoClean Junk Removal apart is our commitment to eco-friendly disposal. We prioritize donating items that can be repurposed or reused to support families in need throughout Chicagoland. Anything that can’t be donated is responsibly recycled or creatively repurposed to minimize waste and protect the environment.",
+    },
+    {
+      question: "How is your pricing structured?",
+      answer:
+        "We charge based on how much space your items take up in our truck. Pricing is pro-rated by load size—¼ load, ½ load, ¾ load, and full truckload. Labor, cleanup, and haul-away are included in the price.",
+    },
+    {
+      question: "Do you offer same-day or next-day service?",
+      answer:
+        "Yes! We offer convenient same-day and next-day junk removal to meet your scheduling needs.",
+    },
+    {
+      question: "Do I need to move the items myself?",
+      answer:
+        "Not at all. Our team handles all the heavy lifting, loading, and cleanup so you don’t have to lift a finger.",
+    },
+    {
+      question: "Are there any items you don’t take?",
+      answer:
+        "We do not handle hazardous materials like paint, chemicals, or asbestos. If you're unsure, just give us a call and we’ll let you know.",
+    },
+    {
+      question: "How do I schedule a pickup?",
+      answer:
+        "Scheduling is easy! Call us, text us, or book online. We’ll give you a free estimate and set up a convenient time for your removal.",
+    },
+    {
+      question: "What areas do you service?",
+      answer:
+        "We proudly serve the greater Chicagoland area. Contact us to confirm if we service your specific location.",
+    },
+  ];
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggle = (index) => {
