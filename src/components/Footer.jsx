@@ -21,21 +21,34 @@ const Footer = () => {
           Ecoclean Junk Removal
         </div>
         <div className="flex space-x-4 text-gray-500 dark:text-gray-400">
-          <a href="#" className="hover:text-pink-600 transition-colors">
+          <a
+            href="https://www.facebook.com/profile.php?id=61574988930380"
+            className="hover:text-blue-600 transition-colors"
+            target="_blank"
+          >
             <Facebook size={20} />
           </a>
-          <a href="#" className="hover:text-pink-600 transition-colors">
+          <a
+            href="https://www.instagram.com/ecocleanjunkremoval?utm_source=qr&igsh=azZyeGthZmZ4azQw"
+            className="hover:text-blue-600 transition-colors"
+            target="_blank"
+          >
             <Instagram size={20} />
           </a>
-          <a href="#" className="hover:text-pink-600 transition-colors">
+          {/* <a
+            href="#"
+            className="hover:text-blue-600 transition-colors"
+            target="_blank"
+          >
             <Twitter size={20} />
           </a>
           <a
             href="mailto:contact@ecoclean.com"
             className="hover:text-blue-600 transition-colors"
+            target="_blank"
           >
             <Mail size={20} />
-          </a>
+          </a> */}
         </div>
       </div>
     </motion.footer>

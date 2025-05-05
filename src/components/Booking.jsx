@@ -16,21 +16,16 @@ const Booking = () => {
   ];
 
   const inputGroups = [
-    [
-      { type: "text", placeholder: "First name" },
-      { type: "text", placeholder: "Last name" },
-    ],
-    [
-      { type: "email", placeholder: "Email" },
-      { type: "tel", placeholder: "Phone number" },
-    ],
-    [{ type: "text", placeholder: "Address", fullWidth: true }],
-    [
-      { type: "text", placeholder: "City" },
-      { type: "text", placeholder: "State" },
-      { type: "text", placeholder: "Zip Code" },
-    ],
+    { type: "text", placeholder: "First name" },
+    { type: "text", placeholder: "Last name" },
+    { type: "email", placeholder: "Email" },
+    { type: "tel", placeholder: "Phone number" },
+    { type: "text", placeholder: "Address" },
+    { type: "text", placeholder: "City" },
+    { type: "text", placeholder: "State" },
+    { type: "text", placeholder: "Zip Code" },
   ];
+
   const inputClass =
     "w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-300 focus:border-sky-300 transition";
 
@@ -38,28 +33,18 @@ const Booking = () => {
     <div className="bg-white flex flex-col md:flex-row">
       {/* Left: Form */}
       <div className="flex-1">
-        {/* <h2 className="text-2xl font-semibold mb-4">Book online</h2> */}
         <h3 className="text-2xl md:text-4xl  font-bold mb-6 text-center">
           Get a Quote
         </h3>
         <form className="space-y-4">
           <div className="space-y-4">
-            {inputGroups.map((group, i) => (
-              <div
+            {inputGroups.map((input, i) => (
+              <input
                 key={i}
-                className={`flex gap-4 ${group[0].fullWidth ? "flex-col" : ""}`}
-              >
-                {group.map((input, j) => (
-                  <input
-                    key={j}
-                    type={input.type}
-                    placeholder={input.placeholder}
-                    className={
-                      input.fullWidth ? `${inputClass} w-full` : inputClass
-                    }
-                  />
-                ))}
-              </div>
+                type={input.type}
+                placeholder={input.placeholder}
+                className="w-full px-4 py-2 border rounded-md"
+              />
             ))}
           </div>
 
