@@ -6,10 +6,10 @@ const Contact = () => {
   return (
     <>
       {/* min-h-screen */}
-      <div className="relative h-[800px]">
+      <div className="relative h-[1000px] md:h-[800px]">
         <TheMap />
         {/* Content */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2   w-3xl mx-auto p-6 text-white shadow-2xl bg-green-900 ">
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[90%]  md:w-3xl  mx-auto p-6 text-white shadow-2xl bg-green-900 ">
           <h1 className="text-3xl font-bold mb-8">Contact Us</h1>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
