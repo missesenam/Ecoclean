@@ -87,7 +87,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <TheMap />
+      {/* <TheMap /> */}
     </>
   );
 };

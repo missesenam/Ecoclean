@@ -69,7 +69,7 @@ const HeroSection = () => {
             href="tel:8159085729"
             className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 text-lg rounded-lg transition"
           >
-            (815) 908-5729
+            (815) 782 0518
           </a>
           <button
             onClick={handleModalToggle}
