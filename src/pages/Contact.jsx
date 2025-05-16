@@ -5,26 +5,22 @@ import TheMap from "@/components/TheMap";
 const Contact = () => {
   return (
     <>
-      <div
-        className="relative bg-cover bg-center bg-no-repeat py-16"
-        style={{ backgroundImage: `url(${contactBg})` }}
-      >
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black opacity-60"></div>
-
+      {/* min-h-screen */}
+      <div className="relative h-[800px]">
+        <TheMap />
         {/* Content */}
-        <div className="relative z-10 max-w-4xl mx-auto p-6 text-white">
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2   w-3xl mx-auto p-6 text-white shadow-2xl bg-green-900 ">
           <h1 className="text-3xl font-bold mb-8">Contact Us</h1>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Left side - Contact Form */}
-            <div className="space-y-4">
+            <div className="space-y-4 col-span-3 ">
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block mb-1">Name</label>
                   <input
                     type="text"
-                    className="w-full p-2 rounded bg-white text-black"
+                    className="w-full p-2 rounded bg-white border  text-black"
                     placeholder="Your name"
                   />
                 </div>
@@ -32,7 +28,7 @@ const Contact = () => {
                   <label className="block mb-1">Email</label>
                   <input
                     type="email"
-                    className="w-full p-2 rounded bg-white text-black"
+                    className="w-full p-2 rounded bg-white border text-black"
                     placeholder="Your email"
                   />
                 </div>
@@ -43,7 +39,7 @@ const Contact = () => {
                   <label className="block mb-1">Phone</label>
                   <input
                     type="tel"
-                    className="w-full p-2 rounded bg-white text-black"
+                    className="w-full p-2 rounded bg-white border  text-black"
                     placeholder="Your phone"
                   />
                 </div>
@@ -51,7 +47,7 @@ const Contact = () => {
                   <label className="block mb-1">Location</label>
                   <input
                     type="text"
-                    className="w-full p-2 rounded bg-white text-black"
+                    className="w-full p-2 rounded bg-white border  text-black"
                     placeholder="Your location"
                   />
                 </div>
@@ -60,7 +56,7 @@ const Contact = () => {
               <div>
                 <label className="block mb-1">Message</label>
                 <textarea
-                  className="w-full p-2 rounded bg-white text-black h-32"
+                  className="w-full p-2 rounded bg-white text-black border  h-32"
                   placeholder="Your message"
                 ></textarea>
               </div>
@@ -71,23 +67,25 @@ const Contact = () => {
             </div>
 
             {/* Right side - Contact Info */}
-            <div className="space-y-6 flex flex-col items-center">
+            <div className="space-y-6 flex flex-col  ">
               <div>
-                <h2 className="text-xl font-semibold mb-2">ADDRESS</h2>
+                <h2 className="text-xl font-bold mb-2 text-blue-500">
+                  ADDRESS
+                </h2>
                 <p>14142 S Napa Cir</p>
                 <p>Plainfield, IL 60544</p>
               </div>
 
               <div>
-                <h2 className="text-xl font-semibold mb-2">CALL US</h2>
-                <p>(3) Side-up</p>
-                <p>ORAL#_#%s</p>
+                <h2 className="text-xl font-bold mb-2 text-blue-500">
+                  CALL US
+                </h2>
+                <p>(815) 782 0518</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      {/* <TheMap /> */}
     </>
   );
 };
