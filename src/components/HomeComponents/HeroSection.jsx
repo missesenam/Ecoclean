@@ -66,7 +66,7 @@ const HeroSection = () => {
 
         <div className="flex flex-col md:flex-row gap-4 mb-6">
           <a
-            href="tel:8159085729"
+            href="tel:(815) 782 0518"
             className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 text-lg rounded-lg transition"
           >
             (815) 782 0518
