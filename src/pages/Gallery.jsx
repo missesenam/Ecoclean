@@ -26,6 +26,7 @@ import picture24 from "../assets/picture24.jpg";
 import picture25 from "../assets/picture25.jpg";
 import picture26 from "../assets/picture26.jpg";
 import picture27 from "../assets/picture27.jpg";
+import cleaningser from "../assets/cleaningser.jpg";
 
 const Gallery = () => {
   // const images = [
@@ -37,19 +38,6 @@ const Gallery = () => {
   //   { src: picture4, title: "ecoclean", description: "image 1" },
   // ];
   const pictures = [
-    picture1,
-    picture2,
-    picture3,
-    picture4,
-    picture5,
-    picture6,
-    picture7,
-    picture8,
-    picture9,
-    picture10,
-    picture11,
-    picture12,
-    picture13,
     picture14,
     picture15,
     picture16,
@@ -78,7 +66,7 @@ const Gallery = () => {
         <div
           className="relative bg-cover bg-center bg-no-repeat lg:h-[50vh] -mt-4"
           style={{
-            backgroundImage: `url(${picture5})`,
+            backgroundImage: `url(${cleaningser})`,
           }}
         >
           {/* Dark Background Overlay */}
