@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import heroImage1 from "../../assets/picture10.jpg";
-import heroImage2 from "../../assets/picture11.jpg";
-import heroImage3 from "../../assets/picture12.jpg";
+import heroImage1 from "../../assets/picture1.jpg";
+import heroImage2 from "../../assets/picture2.jpg";
+import heroImage3 from "../../assets/picture3.jpg";
 import Booking from "../Booking";
 
 const HeroSection = () => {
