@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import captcha from "../assets/png-transparent-recaptcha-wordmark-hd-logo.png";
+import UploadForm from "./UploadForm";
 
 const Booking = () => {
   const services = [
@@ -93,6 +94,7 @@ const Booking = () => {
               </Link>
             </label>
           </div>
+          <UploadForm />
 
           <div className="mb-4 max-w-sm ">
             <div className="flex items-center space-x-2 bg-white border border-gray-300 rounded shadow-sm p-2">
