@@ -91,7 +91,7 @@ const HeroSection = () => {
           >
             <motion.div
               ref={modalRef}
-              className="bg-white rounded-xl p-8 h-[80vh] w-full max-w-2xl shadow-lg text-black overflow-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent"
+              className="bg-white rounded-xl p-8 h-[80vh] w-[90%]  max-w-2xl shadow-lg text-black overflow-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent"
               initial={{ y: "-50%", opacity: 0 }}
               animate={{ y: "0%", opacity: 1 }}
               exit={{ y: "-50%", opacity: 0 }}

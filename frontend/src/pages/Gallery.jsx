@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import picture1 from "../assets/picture1.jpg";
 import picture2 from "../assets/picture2.jpg";
 import picture3 from "../assets/picture3.jpg";
@@ -29,14 +29,8 @@ import picture27 from "../assets/picture27.jpg";
 import cleaningser from "../assets/cleaningser.jpg";
 
 const Gallery = () => {
-  // const images = [
-  //   { src: picture4, title: "ecoclean", description: "image 1" },
-  //   { src: picture3, title: "ecoclean", description: "image 1" },
-  //   { src: picture4, title: "ecoclean", description: "image 1" },
-  //   { src: picture4, title: "ecoclean", description: "image 1" },
-  //   { src: picture4, title: "ecoclean", description: "image 1" },
-  //   { src: picture4, title: "ecoclean", description: "image 1" },
-  // ];
+  const [selectedImage, setSelectedImage] = useState(null); // Modal state
+
   const pictures = [
     picture14,
     picture15,
@@ -46,9 +40,6 @@ const Gallery = () => {
     picture19,
     picture20,
     picture21,
-    // picture22,
-    // picture23,
-    // picture24,
     picture25,
     picture26,
     picture27,
@@ -56,12 +47,12 @@ const Gallery = () => {
 
   const images = pictures.map((pic, index) => ({
     src: pic,
-    // title: "ecoclean",
-    // description: `image ${index + 1}`,
+    title: `Image ${index + 1}`,
   }));
 
   return (
     <>
+      {/* Hero Section */}
       <section>
         <div
           className="relative bg-cover bg-center bg-no-repeat lg:h-[50vh] -mt-4"
@@ -69,41 +60,61 @@ const Gallery = () => {
             backgroundImage: `url(${cleaningser})`,
           }}
         >
-          {/* Dark Background Overlay */}
-          <div className="absolute inset-0 bg-black/50 opacity-50"></div>{" "}
-          {/* Centered Text */}
+          <div className="absolute inset-0 bg-black/50 opacity-50"></div>
           <div className="relative z-10 flex flex-col text-white text-center items-center justify-center p-8">
-            <h2 className="text-3xl lg:text-6xl text-white font-bold mb-4">
-              Gallery
-            </h2>
+            <h2 className="text-3xl lg:text-6xl font-bold mb-4">Gallery</h2>
             <p className="text-lg lg:text-xl lg:w-[60%]">
-              Explore our collection showcasing our works, and success stories
+              Explore our collection showcasing our works and success stories
               that highlight our company impact.
             </p>
           </div>
         </div>
       </section>
+
+      {/* Gallery Grid */}
       <section className="py-12 bg-slate-200">
-        <div className="px-4 grid md:grid-cols-3 gap-5  max-w-6xl mx-auto ">
+        <div className="px-4 grid md:grid-cols-3 gap-5 max-w-6xl mx-auto">
           {images.map((image, index) => (
             <div
               key={index}
               className="relative overflow-hidden group cursor-pointer"
+              onClick={() => setSelectedImage(image)}
             >
               <img
                 src={image.src}
-                alt={`image ${index + 1}`}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 "
+                alt={image.title}
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
               />
               <div className="absolute top-0 left-0 w-full h-full bg-black opacity-20 transition-all duration-300 group-hover:bg-opacity-50"></div>
               <div className="absolute bottom-[-50px] left-5 text-white text-xl font-semibold transition-all duration-300 group-hover:bottom-5">
                 <p>{image.title}</p>
-                <p>{image.description}</p>
               </div>
             </div>
           ))}
         </div>
       </section>
+
+      {/* Modal */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 bg-black opacity-95 z-50 flex items-center justify-center"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div className="relative max-w-4xl max-h-[90vh]">
+            <img
+              src={selectedImage.src}
+              alt={selectedImage.title}
+              className="w-full h-auto object-contain rounded-lg shadow-lg"
+            />
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-2 right-2 bg-white text-black px-3 py-1 rounded-full text-xl font-bold"
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 };
