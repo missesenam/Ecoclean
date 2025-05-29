@@ -1,51 +1,49 @@
 const express = require("express");
-const nodemailer = require("nodemailer");
 const cors = require("cors");
+require("dotenv").config();
+const sgMail = require("@sendgrid/mail");
 
 const app = express();
-app.use(express.json()); // to parse JSON body
+const PORT = process.env.PORT || 5000;
 
-app.use(
-  cors({
-    origin: "http://localhost:5173",
-  })
-);
+app.use(cors());
+app.use(express.json());
 
-// Ethereal test email setup (for dev)
-async function sendTestEmail({ name, email, message }) {
-  let testAccount = await nodemailer.createTestAccount();
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-  let transporter = nodemailer.createTransport({
-    host: "smtp.ethereal.email",
-    port: 587,
-    auth: {
-      user: testAccount.user,
-      pass: testAccount.pass,
-    },
-  });
-
-  let info = await transporter.sendMail({
-    from: `"${name}" <${email}>`,
-    to: "your-email@example.com", // where you want to receive the contact form messages
-    subject: "New Contact Form Message",
-    text: message,
-  });
-
-  console.log("Preview URL:", nodemailer.getTestMessageUrl(info));
-}
-
-// Contact form POST endpoint
 app.post("/api/contact", async (req, res) => {
+  const { name, email, phone, location, message } = req.body;
+
+  if (!name || !email || !message) {
+    return res
+      .status(400)
+      .json({ error: "Name, email, and message are required." });
+  }
+
+  const msg = {
+    to: process.env.SENDGRID_EMAIL_FROM, // your email to receive messages
+    from: process.env.SENDGRID_EMAIL_FROM, // verified sender email
+    subject: "New Contact Form Submission",
+    html: `
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Phone:</strong> ${phone}</p>
+      <p><strong>Location:</strong> ${location}</p>
+      <p><strong>Message:</strong> ${message}</p>
+    `,
+  };
+
   try {
-    const { name, email, message } = req.body;
-    await sendTestEmail({ name, email, message });
-    res.status(200).json({ message: "Email sent successfully" });
+    await sgMail.send(msg);
+    res
+      .status(200)
+      .json({ success: true, message: "Message sent successfully!" });
   } catch (error) {
-    console.error("Email sending error:", error);
-    res.status(500).json({ message: "Failed to send email" });
+    console.error("SendGrid error:", error.response?.body || error.message);
+    res.status(500).json({ success: false, error: "Failed to send message." });
   }
 });
 
-app.listen(5000, () => {
-  console.log("Server running on port 5000");
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });

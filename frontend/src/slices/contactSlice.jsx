@@ -1,23 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-// export const sendContactForm = createAsyncThunk(
-//   "contact/send",
-//   async (formData, { rejectWithValue }) => {
-//     try {
-//       const response = await axios.post(
-//         "http://localhost:5000/api/contact",
-//         formData
-//       );
-//       return response.data.message;
-//     } catch (error) {
-//       return rejectWithValue(
-//         error.response?.data?.error || "Something went wrong"
-//       );
-//     }
-//   }
-// );
-
 export const sendContactForm = createAsyncThunk(
   "contact/send",
   async (formData, { rejectWithValue }) => {
@@ -28,13 +11,30 @@ export const sendContactForm = createAsyncThunk(
       );
       return response.data.message;
     } catch (error) {
-      console.error("API error:", error.response?.data || error.message);
       return rejectWithValue(
-        error.response?.data?.message || "Something went wrong"
+        error.response?.data?.error || "Something went wrong"
       );
     }
   }
 );
+
+// export const sendContactForm = createAsyncThunk(
+//   "contact/send",
+//   async (formData, { rejectWithValue }) => {
+//     try {
+//       const response = await axios.post(
+//         "http://localhost:5000/api/contact",
+//         formData
+//       );
+//       return response.data.message;
+//     } catch (error) {
+//       console.error("API error:", error.response?.data || error.message);
+//       return rejectWithValue(
+//         error.response?.data?.message || "Something went wrong"
+//       );
+//     }
+//   }
+// );
 
 const contactSlice = createSlice({
   name: "contactForm",
