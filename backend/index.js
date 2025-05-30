@@ -1,49 +1,43 @@
+// express
 const express = require("express");
-const cors = require("cors");
+const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
 require("dotenv").config();
-const sgMail = require("@sendgrid/mail");
+const cors = require("cors");
+const port = process.env.PORT || 5000;
+// routers
+const contactRouter = require("./routes/contactRoutes");
+const bookingRouter = require("./routes/bookingRoutes");
 
+// server
 const app = express();
-const PORT = process.env.PORT || 5000;
 
-app.use(cors());
-app.use(express.json());
+// Define specific CORS options
+const contactCorsOptions = {
+  origin: ["http://localhost:5173", "https://your-frontend.com"],
+  methods: ["POST"],
+  credentials: true,
+};
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+// general cors middleware
+app.use(cors(contactCorsOptions));
 
-app.post("/api/contact", async (req, res) => {
-  const { name, email, phone, location, message } = req.body;
+// body parser middleware
+app.use(bodyParser.json());
 
-  if (!name || !email || !message) {
-    return res
-      .status(400)
-      .json({ error: "Name, email, and message are required." });
-  }
+// routers
+app.use("/api/contact", contactRouter);
+app.use("/api/booking", bookingRouter);
 
-  const msg = {
-    to: process.env.SENDGRID_EMAIL_FROM, // your email to receive messages
-    from: process.env.SENDGRID_EMAIL_FROM, // verified sender email
-    subject: "New Contact Form Submission",
-    html: `
-      <p><strong>Name:</strong> ${name}</p>
-      <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Phone:</strong> ${phone}</p>
-      <p><strong>Location:</strong> ${location}</p>
-      <p><strong>Message:</strong> ${message}</p>
-    `,
-  };
-
-  try {
-    await sgMail.send(msg);
-    res
-      .status(200)
-      .json({ success: true, message: "Message sent successfully!" });
-  } catch (error) {
-    console.error("SendGrid error:", error.response?.body || error.message);
-    res.status(500).json({ success: false, error: "Failed to send message." });
-  }
-});
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// connection
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then((resu) => {
+    app.listen(port, () =>
+      console.log(`the server up and ready on port: ${port}`)
+    );
+  })
+  .catch((err) => {
+    console.error("Database connection failed:", err);
+    process.exit(1);
+  });

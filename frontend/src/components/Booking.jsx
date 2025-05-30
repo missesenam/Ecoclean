@@ -17,10 +17,12 @@ const Booking = () => {
   ];
 
   const inputGroups = [
+    // Basic Info
     { type: "text", placeholder: "First name" },
     { type: "text", placeholder: "Last name" },
     { type: "email", placeholder: "Email" },
     { type: "tel", placeholder: "Phone number" },
+    // Address Info
     { type: "text", placeholder: "Address" },
     { type: "text", placeholder: "City" },
     { type: "text", placeholder: "State" },
@@ -48,7 +50,7 @@ const Booking = () => {
               />
             ))}
           </div>
-
+          {/* Services & Message */}
           <div>
             <label className="block font-medium mb-2">Type of Service</label>
             <div className="grid grid-cols-2 gap-2">
@@ -59,7 +61,6 @@ const Booking = () => {
               ))}
             </div>
           </div>
-
           {/* <h3 className="text-lg font-semibold mb-4 mt-6">
               Additional Services
             </h3>
@@ -68,7 +69,6 @@ const Booking = () => {
                 <li key={index}>{service}</li>
               ))}
             </ul> */}
-
           <label
             htmlFor="message"
             className="block text-sm font-medium text-gray-700"
@@ -80,7 +80,7 @@ const Booking = () => {
             placeholder="Type your message..."
             className="w-full h-24 p-2 border border-gray-300 rounded resize-none mb-4 focus:outline-none focus:ring-2 focus:ring-green-500"
           ></textarea>
-
+          {/* Other Fields */}
           <div className="flex items-center mb-4">
             <input
               type="checkbox"
@@ -95,7 +95,6 @@ const Booking = () => {
             </label>
           </div>
           <UploadForm />
-
           <div className="mb-4 max-w-sm ">
             <div className="flex items-center space-x-2 bg-white border border-gray-300 rounded shadow-sm p-2">
               {/* Left side: checkbox and label */}
@@ -124,7 +123,6 @@ const Booking = () => {
               </div>
             </div>
           </div>
-
           <button
             type="submit"
             className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition"
