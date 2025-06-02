@@ -11,26 +11,29 @@ const createBooking = async (req, res) => {
       city,
       state,
       zipcode,
-      services,
       message,
+      services,
       acceptTerms,
-      image,
-      notARobot,
+      // notARobot,
     } = req.body;
+    const image = req.file ? req.file.path : null;
 
     // Simple validation
     if (
-      !firstName ||
-      !lastName ||
-      !email ||
-      !phone ||
-      !address ||
-      !city ||
-      !state ||
-      !zipcode ||
-      !services ||
-      !acceptTerms ||
-      !notARobot
+      !firstName
+      // ||
+      // !lastName ||
+      // !email ||
+      // !phone ||
+      // !address ||
+      // !city ||
+      // !state ||
+      // !zipcode
+      // ||
+      // message ||
+      // !services ||
+      // !acceptTerms ||
+      // !notARobot
     ) {
       return res
         .status(400)
@@ -46,11 +49,11 @@ const createBooking = async (req, res) => {
       city,
       state,
       zipcode,
-      services,
       message,
-      acceptTerms,
+      services,
       image,
-      notARobot,
+      acceptTerms,
+      // notARobot,
     });
 
     await newBooking.save();

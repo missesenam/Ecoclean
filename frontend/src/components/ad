@@ -10,21 +10,18 @@ const inputGroups = [
   { name: "address", type: "text", placeholder: "Address" },
   { name: "city", type: "text", placeholder: "City" },
   { name: "state", type: "text", placeholder: "State" },
-  { name: "zipcode", type: "text", placeholder: "Zip Code" },
+  { name: "zipCode", type: "text", placeholder: "Zip Code" },
 ];
 
 const BookingForm = () => {
   const dispatch = useDispatch();
-  const initialFormState = inputGroups.reduce(
-    (acc, curr) => ({ ...acc, [curr.name]: "" }),
-    {
+  const [formState, setFormState] = useState(
+    inputGroups.reduce((acc, curr) => ({ ...acc, [curr.name]: "" }), {
       message: "",
       services: [],
       image: null,
-      acceptTerms: false,
-    }
+    })
   );
-  const [formState, setFormState] = useState(initialFormState);
   const [selectedImage, setSelectedImage] = useState(null);
 
   const handleChange = (e) => {
@@ -62,17 +59,7 @@ const BookingForm = () => {
       }
     }
 
-    dispatch(sendBookingForm(data))
-      .unwrap()
-      .then(() => {
-        // Clear form after successful submission
-        setFormState(initialFormState);
-        setSelectedImage(null);
-      })
-      .catch((err) => {
-        // handle error if needed
-        console.error("Failed to submit:", err);
-      });
+    dispatch(sendBookingForm(data));
   };
 
   const services = [
@@ -95,7 +82,6 @@ const BookingForm = () => {
           Get a Quote
         </h3>
         <form onSubmit={handleSubmit} className="space-y-4">
-          {/* input field */}
           {inputGroups.map((input, i) => (
             <input
               key={i}
@@ -107,7 +93,7 @@ const BookingForm = () => {
               onChange={handleChange}
             />
           ))}
-          {/* services */}
+
           <label className="block font-medium mb-2">Type of Service</label>
           <div className="grid grid-cols-2 gap-2">
             {services.map((service, index) => (
@@ -123,7 +109,7 @@ const BookingForm = () => {
               </label>
             ))}
           </div>
-          {/* textarea */}
+
           <textarea
             name="message"
             placeholder="Type your message..."
@@ -131,23 +117,7 @@ const BookingForm = () => {
             onChange={handleChange}
             className="w-full h-24 p-2 border border-gray-300 rounded resize-none mb-4"
           />
-          {/* check box */}
-          <div className="mb-4 flex items-center">
-            <input
-              type="checkbox"
-              id="acceptTerms"
-              name="acceptTerms"
-              checked={formState.acceptTerms}
-              onChange={(e) =>
-                setFormState({ ...formState, acceptTerms: e.target.checked })
-              }
-              className="mr-2"
-            />
-            <label htmlFor="acceptTerms" className="text-sm font-medium">
-              I accept the Terms and Conditions
-            </label>
-          </div>
-          {/* image */}
+
           <div>
             <label className="block text-gray-700 font-semibold mb-2">
               Upload Image
@@ -190,9 +160,9 @@ const BookingForm = () => {
             </div>
           </div>
           {/* not robot  */}
-          {/* <div className="mb-4 max-w-sm ">
+          <div className="mb-4 max-w-sm ">
             <div className="flex items-center space-x-2 bg-white border border-gray-300 rounded shadow-sm p-2">
-              
+              {/* Left side: checkbox and label */}
               <div className="flex items-center">
                 <input
                   type="checkbox"
@@ -207,20 +177,20 @@ const BookingForm = () => {
                 </label>
               </div>
 
-             
+              {/* Right side: reCAPTCHA icon & text */}
               <div className="flex flex-col items-center text-[10px] text-gray-500">
                 <img src={captcha} alt="" className="h-10" />
-                
+                {/* <div>reCAPTCHA</div> */}
                 <div className="flex gap-1">
                   <p className="underline">Privacy</p> ·
                   <p className="underline">Terms</p>
                 </div>
               </div>
             </div>
-          </div> */}
+          </div>
           <button
             type="submit"
-            className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 cursor-pointer"
+            className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700"
             onClick={handleSubmit}
           >
             Submit

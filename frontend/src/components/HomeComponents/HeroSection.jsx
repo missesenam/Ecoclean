@@ -73,7 +73,7 @@ const HeroSection = () => {
           </a>
           <button
             onClick={handleModalToggle}
-            className="bg-white hover:bg-gray-100 text-green-700 px-6 py-3 text-lg rounded-lg transition"
+            className="bg-white hover:bg-gray-100 text-green-700 px-6 py-3 text-lg rounded-lg transition cursor-pointer"
           >
             Book Now
           </button>

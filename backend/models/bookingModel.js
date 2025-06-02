@@ -8,50 +8,50 @@ const bookingSchema = new mongoose.Schema(
     },
     lastName: {
       type: String,
-      required: true,
+      required: false,
     },
     email: {
       type: String,
-      required: true,
+      required: false,
     },
     phone: {
       type: String,
-      required: true,
+      required: false,
     },
     address: {
       type: String,
-      required: true,
+      required: false,
     },
     city: {
       type: String,
-      required: true,
+      required: false,
     },
     state: {
       type: String,
-      required: true,
+      required: false,
     },
     zipcode: {
       type: String,
-      required: true,
+      required: false,
+    },
+    message: {
+      type: String,
     },
     services: {
       type: [String],
       required: true,
     },
-    message: {
-      type: String,
-    },
-    acceptTerms: {
-      type: Boolean,
-      required: true,
-    },
     image: {
       type: String, // image URL or path
     },
-    notARobot: {
+    acceptTerms: {
       type: Boolean,
-      required: true,
+      required: false,
     },
+    // notARobot: {
+    //   type: Boolean,
+    //   required: false,
+    // },
   },
   { timestamps: true }
 );
