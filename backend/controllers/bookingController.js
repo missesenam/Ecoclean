@@ -17,7 +17,7 @@ const createBooking = async (req, res) => {
       // notARobot,
     } = req.body;
     const image = req.file ? req.file.path : null;
-
+    console.log("Uploaded image path:", image);
     // Simple validation
     if (
       !firstName

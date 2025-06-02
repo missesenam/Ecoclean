@@ -24,6 +24,8 @@ app.use(cors(contactCorsOptions));
 
 // body parser middleware
 app.use(bodyParser.json());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // routers
 app.use("/api/contact", contactRouter);

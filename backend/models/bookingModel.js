@@ -39,7 +39,7 @@ const bookingSchema = new mongoose.Schema(
     },
     services: {
       type: [String],
-      required: true,
+      required: false,
     },
     image: {
       type: String, // image URL or path
