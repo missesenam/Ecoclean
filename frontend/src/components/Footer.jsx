@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Facebook, Instagram, Twitter, Mail } from "lucide-react";
 import React from "react";
+import { Link } from "react-router-dom";
+Link;
 
 const Footer = () => {
   return (
@@ -11,9 +13,19 @@ const Footer = () => {
       className="w-full bg-white border-t border-gray-200 dark:bg-gray-900 dark:border-gray-700 py-6 mt-10"
     >
       <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-gray-500 dark:text-gray-400 text-sm">
-          &copy; {new Date().getFullYear()} Ecoclean. All rights reserved.
-        </p>
+        <div className="text-center">
+          <p className="text-gray-500 dark:text-gray-400 text-sm">
+            &copy; {new Date().getFullYear()} Ecoclean. All rights reserved.
+          </p>
+          <Link
+            className="text-gray-500 dark:text-gray-400  text-sm"
+            to="/termsandconditions"
+          >
+            {" "}
+            Terms and Conditions
+          </Link>
+        </div>
+
         <div
           className="text-xl font-bold bg-gradient-to-r from-blue-500 to-green-500 
       bg-clip-text text-transparent"

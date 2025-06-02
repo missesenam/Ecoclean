@@ -12,7 +12,7 @@ export const sendContactForm = createAsyncThunk(
       return response.data.message;
     } catch (error) {
       return rejectWithValue(
-        error.response?.data?.error || "Something went wrong"
+        error.response?.data?.message || error.message || "Something went wrong"
       );
     }
   }

@@ -1,16 +1,16 @@
 const contactModel = require("../models/contactModel");
-// const { validationResult } = require("express-validator");
+const mailgun = require("mailgun-js");
+
+const mg = mailgun({
+  apiKey: process.env.MAILGUN_API_KEY,
+  domain: process.env.MAILGUN_DOMAIN,
+});
 
 const createContact = async (req, res) => {
   try {
-    // const errors = validationResult(req);
-    // if (!errors.isEmpty()) {
-    //   res
-    //     .status(400)
-    //     .json({ message: "validation failed", error: errors.array() });
-    // }
-    // data from req body
     const { name, email, phone, location, message } = req.body;
+
+    // Save contact in DB
     const newContact = await contactModel.create({
       name,
       email,
@@ -18,15 +18,34 @@ const createContact = async (req, res) => {
       location,
       message,
     });
-    res
-      .status(201)
-      .json({ message: "Contact created successfully", contact: newContact });
+
+    // Prepare email content
+    const emailData = {
+      from: `${name} <${email}>`,
+      to: "sandbox12345.mailgun.org", // replace with your Mailgun authorized email
+      subject: "New Contact Form Submission",
+      text: `
+        Name: ${name}
+        Email: ${email}
+        Phone: ${phone}
+        Location: ${location}
+        Message: ${message}
+      `,
+    };
+
+    // Send email via Mailgun
+    await mg.messages().send(emailData);
+
+    res.status(201).json({
+      message: "Contact created and email sent successfully",
+      contact: newContact,
+    });
   } catch (error) {
+    console.error("Error:", error);
     res
       .status(500)
-      .json({ message: "failed to create contact", error: error.message });
+      .json({ message: "Failed to create contact", error: error.message });
   }
 };
-module.exports = {
-  createContact,
-};
+
+module.exports = { createContact };
