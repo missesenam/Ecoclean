@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "scripts": {
+    "backend": "node backend/index.js",
+    "frontend": "yarn --cwd frontend start",
+    "dev": "concurrently \"yarn backend\" \"yarn frontend\""
+  }
+}

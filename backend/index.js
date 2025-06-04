@@ -2,7 +2,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-require("dotenv").config();
+require("dotenv").config({ path: __dirname + "/.env" });
 const cors = require("cors");
 const port = process.env.PORT || 5000;
 // routers
