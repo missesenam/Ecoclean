@@ -8,12 +8,12 @@ export const sendBookingForm = createAsyncThunk(
     try {
       const response = await axios.post(
         "http://localhost:5000/api/booking", // Replace with production URL later
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
+        formData
+        // {
+        //   headers: {
+        //     "Content-Type": "multipart/form-data",
+        //   },
+        // }
       );
       return response.data.message;
     } catch (error) {
