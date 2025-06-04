@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const upload = require("../middleware/upload");
+const parser = require("../utils/cloudinary");
 // controller
 const { createBooking } = require("../controllers/bookingController");
 
-router.post("/", upload.single("image"), createBooking);
+router.post("/", parser.single("image"), createBooking);
 
 module.exports = router;
