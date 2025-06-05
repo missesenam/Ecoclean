@@ -1,9 +1,13 @@
 const contactModel = require("../models/contactModel");
-const mailgun = require("mailgun-js");
-
-const mg = mailgun({
-  apiKey: process.env.MAILGUN_API_KEY,
-  domain: process.env.MAILGUN_DOMAIN,
+// const mailgun = require("mailgun-js");
+require("dotenv").config();
+// new stuff
+const formData = require("form-data");
+const Mailgun = require("mailgun.js");
+const mailgun = new Mailgun(formData);
+const mg = mailgun.client({
+  username: "api",
+  key: process.env.MAILGUN_API_KEY,
 });
 
 const createContact = async (req, res) => {
@@ -19,22 +23,37 @@ const createContact = async (req, res) => {
       message,
     });
 
-    // Prepare email content
-    const emailData = {
-      from: `${name} <${email}>`,
-      to: "sandbox12345.mailgun.org", // replace with your Mailgun authorized email
+    // Prepare email to notify YOU (admin)
+    const adminEmailData = {
+      from: `Contact Form <no-reply@${process.env.MAILGUN_DOMAIN}>`,
+      to: ["jeremiahjohnboateng@gmail.com"], // Your email where you want to get notified
       subject: "New Contact Form Submission",
       text: `
-        Name: ${name}
-        Email: ${email}
-        Phone: ${phone}
-        Location: ${location}
-        Message: ${message}
+      New message from:
+      Name: ${name}
+      Email: ${email}
+      Phone: ${phone}
+      Location: ${location}
+      Message: ${message}
       `,
     };
 
-    // Send email via Mailgun
-    await mg.messages().send(emailData);
+    // Prepare confirmation email to USER (optional) new
+    const userEmailData = {
+      from: `Your Company <no-reply@${process.env.MAILGUN_DOMAIN}>`,
+      to: [email], // send back to user email
+      subject: "Thanks for contacting us!",
+      text: `Hi ${name},\n\nThank you for reaching out! We received your message and will get back to you soon.\n\nBest regards,\nYour Company Team`,
+    };
+
+    // Send email to admin N
+    const toMe = await mg.messages.create(
+      process.env.MAILGUN_DOMAIN,
+      adminEmailData
+    );
+
+    // Send confirmation email to user (optional)
+    await mg.messages.create(process.env.MAILGUN_DOMAIN, userEmailData);
 
     res.status(201).json({
       message: "Contact created and email sent successfully",

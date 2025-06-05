@@ -34,30 +34,58 @@
 //   limits: { fileSize: 5 * 1024 * 1024 }, // 5MB limit
 //   fileFilter,
 // });
-
 // module.exports = upload;
 
-require("dotenv").config();
-const cloudinary = require("cloudinary").v2;
-const { CloudinaryStorage } = require("multer-storage-cloudinary");
-const multer = require("multer");
+// the New //
+//
+//
+//
 
-// Configure cloudinary with your credentials
-cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME, // or your actual cloud name string
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET,
-});
-console.log(cloudinary.config());
-// Configure storage to upload files to Cloudinary
-const storage = new CloudinaryStorage({
-  cloudinary: cloudinary,
-  params: {
-    folder: "ecoclean-bookings", // optional folder name in your cloudinary
-    allowed_formats: ["jpg", "jpeg", "png"],
-  },
-});
+// require("dotenv").config();
+// const cloudinary = require("cloudinary").v2;
+// const { CloudinaryStorage } = require("multer-storage-cloudinary");
+// const multer = require("multer");
+// // Configure cloudinary with your credentials
+// cloudinary.config({
+//   cloud_name: process.env.CLOUDINARY_CLOUD_NAME, // or your actual cloud name string
+//   api_key: process.env.CLOUDINARY_API_KEY,
+//   api_secret: process.env.CLOUDINARY_API_SECRET,
+// });
+// // console.log(cloudinary.config());
+// // Configure storage to upload files to Cloudinary
+// const storage = new CloudinaryStorage({
+//   cloudinary: cloudinary,
+//   params: {
+//     folder: "ecoclean-bookings", // optional folder name in your cloudinary
+//     allowed_formats: ["jpg", "jpeg", "png"],
+//   },
+// });
+// const parser = multer({ storage: storage });
+// module.exports = parser;
 
-const parser = multer({ storage: storage });
+// the Newest //
+//
+//
+//
 
-module.exports = parser;
+// const cloudinary = require("cloudinary").v2;
+// const { CloudinaryStorage } = require("multer-storage-cloudinary");
+
+// cloudinary.config({
+//   cloud_name: process.env.CLOUD_NAME,
+//   api_key: process.env.CLOUD_API_KEY,
+//   api_secret: process.env.CLOUD_API_SECRET,
+// });
+
+// const storage = new CloudinaryStorage({
+//   cloudinary,
+//   params: {
+//     folder: "bookings", // optional folder name in Cloudinary
+//     allowed_formats: ["jpg", "jpeg", "png"],
+//   },
+// });
+
+// module.exports = {
+//   cloudinary,
+//   storage,
+// };

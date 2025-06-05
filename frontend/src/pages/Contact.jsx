@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { sendContactForm } from "../slices/contactSlice"; // You'll create this next
+import { toast } from "react-hot-toast";
 import TheMap from "@/components/TheMap";
 
 const Contact = () => {
@@ -34,9 +35,18 @@ const Contact = () => {
     });
   };
 
+  useEffect(() => {
+    if (success) {
+      toast.success("Message sent successfully!");
+    }
+    if (error) {
+      toast.error(`Error: ${error}`);
+    }
+  }, [success, error]);
+
   return (
     <div className="relative h-[1000px] md:h-[800px]">
-      <TheMap />
+      {/* <TheMap /> */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[90%] md:w-3xl mx-auto p-6 text-white shadow-2xl bg-green-900">
         <h1 className="text-3xl font-bold mb-8">Contact Us</h1>
 
@@ -113,11 +123,6 @@ const Contact = () => {
             >
               {status === "loading" ? "Sending..." : "Send Message"}
             </button>
-
-            {success && (
-              <p className="text-green-300">Message sent successfully!</p>
-            )}
-            {error && <p className="text-red-300">Error: {error}</p>}
           </div>
 
           {/* Contact Info */}
