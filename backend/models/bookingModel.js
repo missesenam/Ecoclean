@@ -41,12 +41,12 @@ const bookingSchema = new mongoose.Schema(
       type: [String],
       required: false,
     },
-    image: {
-      type: String, // image URL or path
-    },
     acceptTerms: {
       type: Boolean,
       required: false,
+    },
+    image: {
+      type: String,
     },
     // notARobot: {
     //   type: Boolean,

@@ -7,7 +7,7 @@ export const sendBookingForm = createAsyncThunk(
   async (formData, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/booking", // Replace with production URL later
+        "http://localhost:5000/api/booking",
         formData,
         {
           headers: {
@@ -15,6 +15,7 @@ export const sendBookingForm = createAsyncThunk(
           },
         }
       );
+      console.log(response.data);
       return response.data.message;
     } catch (error) {
       return rejectWithValue(

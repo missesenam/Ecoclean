@@ -36,7 +36,8 @@ const createBooking = async (req, res) => {
     } = req.body;
 
     // i think this one is the real deal
-    const imageUrl = req.file.path; // Cloudinary gives direct URL
+    const imageUrl = req.file?.path; // Cloudinary gives direct URL
+    console.log("Image uploaded to:", req.file?.path);
 
     // Upload image to Cloudinary(try this and if not working real deal)
     // const result = await cloudinary.uploader.upload(req.file.path);
@@ -75,9 +76,9 @@ const createBooking = async (req, res) => {
       zipcode,
       message,
       services,
-      // image,
-      image: imageUrl,
       acceptTerms,
+      image: imageUrl,
+      // image,
       // notARobot,
     });
     await newBooking.save();
