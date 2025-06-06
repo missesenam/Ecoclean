@@ -2,8 +2,8 @@ const Booking = require("../models/bookingModel");
 // new
 // const formData = require("form-data");
 // const Mailgun = require("mailgun.js");
-// const cloudinary = require("cloudinary").v2;
-// require("dotenv").config();
+const cloudinary = require("cloudinary").v2;
+require("dotenv").config();
 
 // const mailgun = new Mailgun(formData);
 // const mg = mailgun.client({
@@ -12,11 +12,11 @@ const Booking = require("../models/bookingModel");
 // });
 
 // Cloudinary config
-// cloudinary.config({
-//   cloud_name: process.env.CLOUD_NAME,
-//   api_key: process.env.CLOUD_API_KEY,
-//   api_secret: process.env.CLOUD_API_SECRET,
-// });
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
 
 const createBooking = async (req, res) => {
   try {
@@ -36,7 +36,7 @@ const createBooking = async (req, res) => {
     } = req.body;
 
     // i think this one is the real deal
-    // const imageUrl = req.file.path; // Cloudinary gives direct URL
+    const imageUrl = req.file.path; // Cloudinary gives direct URL
 
     // Upload image to Cloudinary(try this and if not working real deal)
     // const result = await cloudinary.uploader.upload(req.file.path);
@@ -75,8 +75,8 @@ const createBooking = async (req, res) => {
       zipcode,
       message,
       services,
-      image,
-      // image: imageUrl,
+      // image,
+      image: imageUrl,
       acceptTerms,
       // notARobot,
     });
