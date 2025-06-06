@@ -121,7 +121,10 @@ const createBooking = async (req, res) => {
     res.status(201).json({ message: "Booking submitted successfully!" });
   } catch (error) {
     console.error("Error creating booking:", error);
-    res.status(500).json({ message: "Server error. Please try again later." });
+    res.status(500).json({
+      message: "Server error. Please try again later.",
+      error: error.message,
+    });
   }
 };
 
