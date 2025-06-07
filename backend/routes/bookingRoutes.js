@@ -6,8 +6,9 @@ const { createBooking } = require("../controllers/bookingController");
 
 // NEW //
 const multer = require("multer");
-const { storage } = require("../utils/cloudinary");
-const upload = multer({ storage }); // Cloudinary middleware here
+// const { storage } = require("../utils/cloudinary");
+// const upload = multer({ storage }); // Cloudinary middleware here
+const upload = require("../utils/cloudinary");
 
 // ;
 router.post("/", upload.single("image"), createBooking);
